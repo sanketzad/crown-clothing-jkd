@@ -1,0 +1,37 @@
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.header .logo-container {
+  height: 100%;
+  width: 70px;
+  padding: 25px;
+}
+
+.header .options {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header .options .option {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.header .options .option:focus {
+  border-bottom: 5px solid black;
+  border-radius: 10px;
+  animation: bounce;
+  animation-duration: 1s;
+  border-top: 0.3px solid black;
+  border-left: 0.3px solid black;
+  border-right: 0.3px solid black;
+}
