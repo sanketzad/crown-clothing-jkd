@@ -17,7 +17,7 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  (collections) => Object.values(collections)
+  (collections) => (collections ? Object.values(collections) : [])
   //   (collections) => Object.keys(collections).map((key) => collections[key])
 );
 
@@ -25,8 +25,10 @@ export const selectCollection = (collectionUrlParam) =>
   createSelector(
     [selectCollections],
     (collections) =>
-      //If data is in object format
-      collections[collectionUrlParam]
+      collections
+        ? //If data is in object format
+          collections[collectionUrlParam]
+        : null
 
     //If data is in array, we use this below method
     // collections.find(

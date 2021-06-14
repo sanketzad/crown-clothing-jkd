@@ -12,12 +12,14 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { SelectCurrentUser } from "./redux/user/user.selectors";
 import CheckoutPage from "./pages/checkout/checkout.component.jsx";
+import ContactUsPage from "./pages/contact-us/contact-us.component";
+// import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser } = this.props; //If we have to ad shop data we need to destructure collectionsArray here
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       // createUserProfileDocument(user);
       //this.setState({ currentUser: user });
@@ -34,6 +36,12 @@ class App extends React.Component {
       } else {
         setCurrentUser(userAuth);
       }
+
+      //Used to add shop data to firebase programatically instead of manually doing it
+      // addCollectionAndDocumentItems(
+      //   "collections",
+      //   collectionsArray.map(({ title, items }) => ({ title, items }))
+      // );
     });
   }
 
@@ -48,6 +56,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route excat path="/contactus" component={ContactUsPage} />
           <Route
             exact
             path="/signin"
@@ -68,6 +77,7 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: SelectCurrentUser,
+  // collectionsArray: selectCollectionsForPreview, //Used to add shop data to firebase programatically instead of manually doing it
 });
 
 const mapDispatchToProps = (dispatch) => ({
