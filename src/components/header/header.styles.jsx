@@ -7,7 +7,10 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  position: relative;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background-color: white;
 `;
 
 export const LogoContainer = styled(Link)`
