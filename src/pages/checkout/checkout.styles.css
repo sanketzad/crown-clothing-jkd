@@ -34,5 +34,30 @@
   color: red;
   text-align: center;
   font-size: 24px;
-  margin: 40px 0;
+  margin: 10px 0;
+}
+
+.StripeCheckout {
+  margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .checkout-page {
+    width: 90vw;
+  }
+
+  .checkout-page > .test-warning {
+    font-size: 16px;
+    margin: 20px 0 5px 0;
+  }
+
+  .checkout-page > .checkout-header > .header-block {
+    text-transform: capitalize;
+    width: 23%;
+    font-size: 0.85em;
+  }
+
+  .StripeCheckout {
+    margin: 0;
+  }
 }

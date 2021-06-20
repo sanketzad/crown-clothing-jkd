@@ -5,3 +5,11 @@
   margin: 30px auto;
   column-rule: 1px dotted #ccc;
 }
+
+@media screen and (max-width: 800px) {
+  .sign-in-and-sign-up {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+}
