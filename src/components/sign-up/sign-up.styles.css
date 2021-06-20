@@ -7,3 +7,13 @@
 .sign-up .title {
   margin: 20px 0;
 }
+
+@media screen and (max-width: 800px) {
+  .sign-up {
+    width: 100%;
+  }
+
+  button {
+    margin: auto;
+  }
+}

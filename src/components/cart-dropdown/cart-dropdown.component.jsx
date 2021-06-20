@@ -20,6 +20,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
         <span className="empty-message">No Items to display</span>
       )}
     </div>
+    <hr />
     <CustomButton
       type="button"
       onClick={() => {

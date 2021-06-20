@@ -13,12 +13,14 @@ img {
   width: 70%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  line-height: 20px;
+  padding: 10px 10px;
+  /* line-height: 20px; */
 }
 
-.cart-item > .item-details > .name {
-  font-size: 16px;
+.cart-item > .item-details > .name,
+.cart-item > .item-details > .price {
+  width: 100%;
+  font-size: 14px;
 }
